@@ -5,18 +5,25 @@ const initState = {
   showCounter: true,
 };
 
+export const counterActionType = {
+  increment: 'INCREMENT',
+  increase: 'INCREASE',
+  decrement: 'DECREMENT',
+  toggle: 'TOGGLE',
+};
+
 const counterReducer = (state = initState, action) => {
   switch (action.type) {
-    case "INCREMENT": {
+    case counterActionType.increment: {
       return { ...state, counter: state.counter + 1 };
     }
-    case "INCREASE": {
+    case counterActionType.increase: {
       return { ...state, counter: state.counter + action.payload };
     }
-    case "DECREMENT": {
+    case counterActionType.decrement: {
       return { ...state, counter: state.counter - 1 };
     }
-    case "TOGGLE": {
+    case counterActionType.toggle: {
       return { ...state, showCounter: !state.showCounter };
     }
     default: {
