@@ -5,7 +5,7 @@ const initState = {
   showCounter: true,
 };
 
-export const counterActionType = {
+export const COUNTER_ACTION_TYPE = {
   increment: 'INCREMENT',
   increase: 'INCREASE',
   decrement: 'DECREMENT',
@@ -14,16 +14,16 @@ export const counterActionType = {
 
 const counterReducer = (state = initState, action) => {
   switch (action.type) {
-    case counterActionType.increment: {
+    case COUNTER_ACTION_TYPE.increment: {
       return { ...state, counter: state.counter + 1 };
     }
-    case counterActionType.increase: {
+    case COUNTER_ACTION_TYPE.increase: {
       return { ...state, counter: state.counter + action.payload };
     }
-    case counterActionType.decrement: {
+    case COUNTER_ACTION_TYPE.decrement: {
       return { ...state, counter: state.counter - 1 };
     }
-    case counterActionType.toggle: {
+    case COUNTER_ACTION_TYPE.toggle: {
       return { ...state, showCounter: !state.showCounter };
     }
     default: {
